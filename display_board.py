@@ -1,8 +1,8 @@
-# import os
+import os
 
 def display_board(board):
     
-    # os.system("clear")
+    os.system("clear")
 
     print('   |   |')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])

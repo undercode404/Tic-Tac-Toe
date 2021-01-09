@@ -3,6 +3,6 @@ import random
 def player_turn():
 
     if random.randint(1,2) == 1:
-        return 'player 1'
+        return 'Player 1'
     else:
-        return 'player 2'
+        return 'Player 2'
