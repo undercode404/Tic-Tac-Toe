@@ -9,7 +9,7 @@ from choose_player_turn import player_turn
 from replay import replay
 
 def main():           # if __name__ == "__main__"
-    
+
     positions_available = [' '] * 10
 
     describe()
@@ -17,23 +17,24 @@ def main():           # if __name__ == "__main__"
     sample()
 
     play_game = input('Are you ready to play? Enter Yes or No. : ')
-    if play_game.lower()[0] == 'y':
+    if play_game.lower().startswith('y'):
         game = True
     else:
         game = False
         print("See ya next time!")
         exit(0)
 
-        
-    turn = player_turn()
+# if not play_game.lower().startwith("y"):
+#   exit(0)
+
+    turn = player_turn() # rintu: invoke first_turn()
     print(turn +" has been selected by the system to go first.\n")
     player1_marker, player2_marker = marker()
-    
-    
+
+
     while game:
 
         if turn == 'Player 1':
-
 
             print("Player 1, Its your turn to input the index position.")
             player1_index = input_validification(positions_available)
@@ -41,7 +42,6 @@ def main():           # if __name__ == "__main__"
             positions_available[player1_index]= player1_marker
 
             display_board(positions_available)
-
 
             if not spaces(positions_available):
                 print("The match has been a draw match.\n")
@@ -65,19 +65,18 @@ def main():           # if __name__ == "__main__"
             else:
                 turn = 'Player 2'
 
-        
-        if turn == 'Player 2':
 
+        if turn == 'Player 2':
 
             print("Player 2, Its your turn to input the index position.")
             player2_index = input_validification(positions_available)
 
-            positions_available[player2_index]= player2_marker
+            positions_available[player2_index] = player2_marker
 
             display_board(positions_available)
 
 
-            if spaces(positions_available)!=True:
+            if not spaces(positions_available):
                 print(spaces(positions_available))
                 print("The match has been a draw match.\n")
                 if replay():

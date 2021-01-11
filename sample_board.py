@@ -12,3 +12,9 @@ def sample():
     print('   |   |')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('   |   |')
+
+    # print_board = """ 
+    # 1 | 2 | 3
+    # ...
+    #  """
+    # print(print_board)
